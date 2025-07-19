@@ -1,0 +1,55 @@
+loai bo:
+
+com.fujitsu.mobilephone.providers.settings
+com.fujitsu.mobile_phone.camera
+
+
+chi disable:
+com.fujitsu.mobile_phone.OneTouchBuzzer
+com.fcnt.mobile_phone.phoneappfakecall
+com.fcnt.mobile_phone.collectdevicelog
+
+
+
+adb shell pm uninstall --user 0 com.fcnt.mobile_phone.collectdevicelog
+
+
+
+
+
+
+
+
+
+adb shell am force-stop com.fujitsu.overlay.settings
+adb shell pm clear com.fujitsu.overlay.settings
+adb shell pm disable-user --user 0 com.fujitsu.overlay.settings
+adb shell pm uninstall --user 0 com.fujitsu.overlay.settings
+
+
+adb shell cmd package install-existing com.fujitsu.mobilephone.providers.settings
+
+
+
+adb shell am force-stop com.fujitsu.mobile_phone.fjhome_simple
+
+
+adb shell pm clear com.fujitsu.mobile_phone.fjhome_simple
+
+adb shell pm disable-user --user 0 com.fujitsu.mobile_phone.fjhome_simple
+
+adb shell pm uninstall --user 0 com.fujitsu.mobile_phone.fjhome_simple
+
+
+
+adb shell pm disable-user --user 0 com.fujitsu.mobile_phone.OneTouchBuzzer
+
+
+
+adb shell pm disable-user --user 0 com.fujitsu.mobile_phone.fjhome
+
+
+adb shell cmd package install-existing com.fujitsu.mobile_phone.OneTouchBuzzer
+
+
+adb shell cmd package install-existing com.google.android.apps.photos

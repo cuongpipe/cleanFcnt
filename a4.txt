@@ -1,0 +1,3 @@
+com.fujitsu.mobile_phone.OneTouchBuzzer
+com.fcnt.mobile_phone.phoneappfakecall
+com.fujitsu.mobile_phone.Recommend
